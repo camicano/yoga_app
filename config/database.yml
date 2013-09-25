@@ -27,5 +27,4 @@ production:
   database: yoga_development
   pool: 5
   username: camilacano
-  host: localhost
   password:
