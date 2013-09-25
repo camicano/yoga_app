@@ -10,7 +10,7 @@
 <ul>
 	<% @studio.yogaclasses.each do |yogaclass| %>
 		<a href="/studios/profile/class/<%= yogaclass.id %>">
-			<li><%= yogaclass.day %> at <%= yogaclass.time %>. ($<%=  yogaclass.cost %>)</li>
+			<li><%= yogaclass.title %>: <%= yogaclass.day %> at <%= yogaclass.time %>. ($<%=  yogaclass.cost %>)</li>
 		</a>
 	<% end %>
 </ul>
