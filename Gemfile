@@ -15,10 +15,15 @@ gem 'pry'
 
 gem 'devise'
 
-gem 'jquery-rails'
-
-#extra stuff
-group :development, :test do
-  gem 'rspec-rails', '~> 2.0'
+group :assets do
+	gem 'uglifier', '>= 1.0.3'
 end
+
+# #extra stuff
+# group :development, :test do
+#   gem 'rspec-rails', '~> 2.0'
+# end
+
+
+gem 'jquery-rails'
 
