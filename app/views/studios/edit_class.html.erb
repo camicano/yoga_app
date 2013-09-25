@@ -11,7 +11,7 @@
 </div>
 <div>
 <%= f.label(:day) %>
-<%= f.select(:day, options_for_select([[], ['monday'], ['tuesday'], ['wednesday'], ['thursday'], ['friday'], ['saturday'], ['sunday']])) %>
+<%= f.select(:day, options_for_select([[], ['monday'], ['tuesday'], ['wednesday'], ['thursday'], ['friday'], ['saturday'], ['sunday']], @class.day)) %>
 </div>
 <div>
 <%= f.label(:cost, "Cost: $") %>
