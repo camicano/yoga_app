@@ -1,0 +1,27 @@
+<h1>edit</h1>
+
+<%= form_for @address, url: create_address_path do |f| %>
+ 
+
+<div>
+	<%= f.label("Name: ") %>
+	<%= f.text_field :name %>
+</div>
+
+<div>
+	<%= f.label("Address: ") %>
+	<%= f.text_field :address %>
+</div>
+
+<div>
+	<%= f.label("Description: ") %>
+</div>
+<div>
+	<%= f.text_area :description %>
+</div>
+
+
+<div> 
+	<%= f.submit("Submit") %>
+</div>
+<% end %>

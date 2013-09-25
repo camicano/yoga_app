@@ -1,0 +1,19 @@
+<h1>Profile</h1>
+
+<h3>Studio Details</h3>
+
+<p>Name: <%= @studio.address.name %></p>
+<br>
+<p>Address: <%= @studio.address.address %> </p>
+<p>Description: <%= @studio.address.description %></p>
+
+<ul>
+	<% @studio.yogaclasses.each do |yogaclass| %>
+		<a href="/studios/profile/class/<%= yogaclass.id %>">
+			<li><%= yogaclass.day %> at <%= yogaclass.time %>. ($<%=  yogaclass.cost %>)</li>
+		</a>
+	<% end %>
+</ul>
+
+<%= link_to "Add a class", new_yogaclass_path %>  |   
+<%= link_to "Create/Edit info", new_address_path %> 

@@ -1,0 +1,10 @@
+<%= link_to "home", root_url %>
+
+<% if user_signed_in? %>
+  | <%= link_to "profile", user_profile_path %>
+  | <%= button_to "sign out", destroy_user_session_path, method: :delete %>
+<% else %>
+  | <%= link_to "sign up", new_user_registration_path %>
+  | <%= link_to "sign_in", new_user_session_path %>
+  | are you a yoga <%= link_to "studio?", new_studio_session_path %>
+<% end %>

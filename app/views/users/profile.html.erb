@@ -1,0 +1,15 @@
+<h1>Profile</h1>
+
+<h3>Personalized Search</h3>
+
+<p>Neighbourhood: <%= @user.schedule.neighbourhood %></p>
+<br>
+<p>Monday: <%= @user.schedule.mon %></p>
+<p>Tuesday: <%= @user.schedule.tue %></p>
+<p>Wednesday: <%= @user.schedule.wed %></p>
+<p>Thursday: <%= @user.schedule.thu %></p>
+<p>Friday: <%= @user.schedule.fri %></p>
+<p>Saturday: <%= @user.schedule.sat %></p>
+<p>Sunday: <%= @user.schedule.sun %></p>
+
+<%= link_to "Create/Edit schedule", new_schedule_path %> 
