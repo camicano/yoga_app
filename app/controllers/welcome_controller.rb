@@ -3,6 +3,6 @@ class WelcomeController < ApplicationController
 
 	end
 	def brooklyn
-
+		@search = []
 	end
 end

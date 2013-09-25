@@ -20,5 +20,7 @@ Yoga::Application.routes.draw do
 
   root :to => 'welcome#index', :as => "index"
   get "/brooklyn", :to => 'welcome#brooklyn', :as => "brooklyn"
+  post '/', :to => 'welcome#search', :as => 'search'
+  get '/result', :to => 'welcome#result', :as => 'result'
 
 end
