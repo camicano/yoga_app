@@ -13,6 +13,8 @@ gem 'pry'
 
 gem 'devise'
 
+gem 'jquery-rails'
+
 #extra stuff
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'

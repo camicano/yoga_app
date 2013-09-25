@@ -18,6 +18,7 @@ Yoga::Application.routes.draw do
   put "/studios/profile/class/:yogaclass_id", :to => "studios#update_class", :as => "update_yogaclass"
   delete "/studios/profile/class/:yogaclass_id", :to => "studios#delete_class", :as => "delete_yogaclass"
 
-  root :to => 'welcome#index'
+  root :to => 'welcome#index', :as => "index"
+  get "/brooklyn", :to => 'welcome#brooklyn', :as => "brooklyn"
 
 end

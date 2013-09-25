@@ -1,6 +1,7 @@
 class StudiosController < ApplicationController
 	def profile
 		@studio = current_studio
+		@studio.address = Address.new
 	end
 
 	def new_class
