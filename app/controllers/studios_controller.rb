@@ -1,7 +1,11 @@
 class StudiosController < ApplicationController
 	def profile
 		@studio = current_studio
-		@studio.address = Address.new
+		if @studio.address.present?
+			@address = @studio.address
+		else
+			@address = Address.new
+		end
 	end
 
 	def new_class
