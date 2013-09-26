@@ -1,0 +1,198 @@
+<!-- find studios that have classes of the days needed -->
+<% array_classes = [] %>
+<% @studios.each do |studio| %>
+	<% stu = studio.address %>
+	<% classes = studio.yogaclasses %>
+	
+<!-- search for monday -->
+	<% if stu.neighbourhood == user.neighbourhood %>
+		<% if user.mon != nil %>
+			<% classes.each do |cla| %>
+				<% if cla.day == "monday" %>
+					<% if user.mon == "all" %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.mon == "morning" && cla.time <= 1100 %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.mon == "afternon" && cla.time >= 1200 && cla.time <= 1600 %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.mon == "night" && cla.time >= 1630 %>
+						<% array_classes << cla %>
+					<% end %>				 
+				<% end %> 
+			<% end %>	
+		<% end %>
+	<% end %>
+<!-- search for tuesday -->
+	<% if stu.neighbourhood == user.neighbourhood %>
+		<% if user.tue != nil %>
+			<% classes.each do |cla| %>
+				<% if cla.day == "tuesday" %>
+					<% if user.tue == "all" %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.tue == "morning" && cla.time <= 1100 %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.tue == "afternoon" && cla.time >= 1200 && cla.time <= 1600 %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.tue == "night" && cla.time >= 1630 %>
+						<% array_classes << cla %>
+					<% end %>				 
+				<% end %> 
+			<% end %>	
+		<% end %>
+	<% end %>
+
+<!-- search for wednesday -->
+	<% if stu.neighbourhood == user.neighbourhood %>
+		<% if user.wed != nil %>
+			<% classes.each do |cla| %>
+				<% if cla.day == "wednesday" %>
+					<% if user.wed == "all" %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.wed == "morning" && cla.time <= 1100 %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.wed == "afternoon" && cla.time >= 1200 && cla.time <= 1600 %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.wed == "night" && cla.time >= 1630 %>
+						<% array_classes << cla %>
+					<% end %>				 
+				<% end %> 
+			<% end %>	
+		<% end %>
+	<% end %>
+
+<!-- search for thursday -->
+	<% if stu.neighbourhood == user.neighbourhood %>
+		<% if user.thu != nil %>
+			<% classes.each do |cla| %>
+				<% if cla.day == "thursday" %>
+					<% if user.thu == "all" %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.thu == "morning" && cla.time <= 1100 %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.thu == "afternoon" && cla.time >= 1200 && cla.time <= 1600 %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.thu == "night" && cla.time >= 1630 %>
+						<% array_classes << cla %>
+					<% end %>				 
+				<% end %> 
+			<% end %>	
+		<% end %>
+	<% end %>
+
+<!-- search for friday -->
+	<% if stu.neighbourhood == user.neighbourhood %>
+		<% if user.fri != nil %>
+			<% classes.each do |cla| %>
+				<% if cla.day == "friday" %>
+					<% if user.fri == "all" %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.fri == "morning" && cla.time <= 1100 %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.fri == "afternoon" && cla.time >= 1200 && cla.time <= 1600 %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.fri == "night" && cla.time >= 1630 %>
+						<% array_classes << cla %>
+					<% end %>				 
+				<% end %> 
+			<% end %>	
+		<% end %>
+	<% end %>
+
+<!-- search for saturday -->
+	<% if stu.neighbourhood == user.neighbourhood %>
+		<% if user.sat != nil %>
+			<% classes.each do |cla| %>
+				<% if cla.day == "saturday" %>
+					<% if user.sat == "all" %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.sat == "morning" && cla.time <= 1100 %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.sat == "afternoon" && cla.time >= 1200 && cla.time <= 1600 %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.sat == "night" && cla.time >= 1630 %>
+						<% array_classes << cla %>
+					<% end %>				 
+				<% end %> 
+			<% end %>	
+		<% end %>
+	<% end %>
+
+<!-- search for sunday -->
+	<% if stu.neighbourhood == user.neighbourhood %>
+		<% if user.sun != nil %>
+			<% classes.each do |cla| %>
+				<% if cla.day == "sunday" %>
+					<% if user.sun == "all" %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.sun == "morning" && cla.time <= 1100 %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.sun == "afternoon" && cla.time >= 1200 && cla.time <= 1600 %>
+						<% array_classes << cla %>
+					<% end %>
+					<% if user.sun == "night" && cla.time >= 1630 %>
+						<% array_classes << cla %>
+					<% end %>				 
+				<% end %> 
+			<% end %>	
+		<% end %>
+	<% end %>
+
+<!-- selected classes -->
+
+<% end %>
+
+<div>
+	<% addresses = [] %>
+	<% array_classes.each do |add| %>
+	<% address = add.studio.address %>
+	<% marker = "&markers=" + address.latitude.to_s + "%2C" + address.longitude.to_s %>
+	<% addresses << marker %>
+	<% end %>
+	<h1>Map</h1>
+	<%= image_tag "http://maps.google.com/maps/api/staticmap?center=Crown+Heights,NY&size=450x300&sensor=false&zoom=14#{addresses.join}" %> 
+</div>
+
+<div>
+<h1>Yoga classes available</h1>
+<ul>
+<% array_classes.each do |cla| %>
+	<li><%= cla.title %>: <%= cla.day %> at <%= cla.time %>. ($<%=  cla.cost %>)</li>
+<% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

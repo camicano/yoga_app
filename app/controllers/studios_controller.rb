@@ -1,7 +1,4 @@
 class StudiosController < ApplicationController
-	
-	
-
 	def profile
 		@studio = current_studio
 		if @studio.address.present?

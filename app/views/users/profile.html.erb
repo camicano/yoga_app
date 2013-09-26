@@ -13,3 +13,7 @@
 <p>Sunday: <%= @schedule.sun %></p>
 
 <%= link_to "Create/Edit schedule", edit_schedule_path %> 
+
+<div>
+<%= render partial: "users/schedule", locals: { studios: @studios, user: @schedule } %>
+</div>

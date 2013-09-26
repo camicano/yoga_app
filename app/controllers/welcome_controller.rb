@@ -5,4 +5,7 @@ class WelcomeController < ApplicationController
 	def brooklyn
 		@search = []
 	end
+	def result
+		@addresses = Address.all
+	end
 end

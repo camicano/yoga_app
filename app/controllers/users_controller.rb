@@ -1,11 +1,8 @@
 class UsersController < ApplicationController
 	def profile
 		@user = current_user
-		if @user.schedule.present?
-			@schedule = @user.schedule
-		else
-			@schedule = Schedule.new
-		end
+		@schedule = @user.schedule
+		@studios = Studio.all
 	end
 end
 

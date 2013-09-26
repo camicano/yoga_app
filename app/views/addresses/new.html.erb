@@ -9,6 +9,10 @@
 </div>
 
 <div>
+	<%= label_tag ("Neighbourhood: ") %>
+	<%= select_tag(:neighbourhood, options_for_select([[], ["crown heights"], ["union square"]])) %>
+</div>
+<div>
 	<%= f.label("Address: ") %>
 	<%= f.text_field :address %>
 </div>

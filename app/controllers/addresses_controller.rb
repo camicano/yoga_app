@@ -24,3 +24,12 @@ class AddressesController < ApplicationController
 	end
 
 end
+
+# all, morning, afternoon, night
+ 
+  # #<Schedule id: 1, user_id: 1, mon: "morning", 
+  # tue: "all", wed: "all", thu: "all", fri: "all", 
+  # sat: "morning", sun: "all", 
+  # created_at: "2013-09-26 00:12:22", 
+  # updated_at: "2013-09-26 01:14:02", 
+  # neighbourhood: "crown heights">
