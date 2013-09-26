@@ -23,11 +23,14 @@ Yoga::Application.routes.draw do
   get "/studios/profile/class/:yogaclass_id", :to => "studios#edit_class", :as => "edit_yogaclass"
   put "/studios/profile/class/:yogaclass_id", :to => "studios#update_class", :as => "update_yogaclass"
   delete "/studios/profile/class/:yogaclass_id", :to => "studios#delete_class", :as => "delete_yogaclass"
+  get "/studios/class/:yogaclass_id/show", :to => "studios#show", :as => "show_yogaclass"
+  post "/studios/class/:yogaclass_id/show", :to => "studios#post", :as => "post_yogaclass"
 
   # welcome routes
   root :to => 'welcome#index', :as => "index"
   get "/brooklyn", :to => 'welcome#brooklyn', :as => "brooklyn"
   post '/', :to => 'welcome#search', :as => 'search'
   get '/result', :to => 'welcome#result', :as => 'result'
+  get '/test', :to => 'welcome#test'
 
 end

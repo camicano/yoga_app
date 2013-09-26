@@ -35,4 +35,23 @@ class StudiosController < ApplicationController
 		
 		redirect_to '/studios/profile'
 	end 
+
+	def show
+		@yogaclass = Yogaclass.find(params[:yogaclass_id])
+		@studio = @yogaclass.studio.address
+		@review = Review.new
+		yogaclass = Yogaclass.find(params[:yogaclass_id])
+		@reviews = yogaclass.reviews
+	end
+
+	def post
+		@review = Review.create(params[:review])
+		yogaclass = Yogaclass.find(params[:yogaclass_id])
+
+		yogaclass.reviews << @review
+
+		
+		
+		redirect_to show_yogaclass_path
+	end
 end

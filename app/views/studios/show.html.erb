@@ -1,0 +1,38 @@
+<h1 class="subtitle2"><%= @yogaclass.title %></h1>
+<div class="offset-by-three six columns">
+	<h1 class="subtitle">Info</h1>
+	<ul>
+		<li class="bodytext2"><strong>Day & Time</strong>: <%= @yogaclass.day %> at <%= @yogaclass.time %>.</li>
+		<li class="bodytext2"><strong>Cost</strong>: <%=  @yogaclass.cost %></li>
+		<li class="bodytext2"><strong>Studio</strong>: <%=  @studio.name.capitalize %></li>
+		<li class="bodytext2"><strong>Description</strong>: <%=  @studio.description %></li>
+		<li class="bodytext2"><strong>Address</strong>: <%=  @studio.address %></li>
+	</ul>
+</div>
+
+<div class="six columns">
+	<% marker = "&markers=" + @studio.latitude.to_s + "%2C" + @studio.longitude.to_s %>
+
+	<% neighbourhood = @studio.neighbourhood.gsub(/[" "]/, "+") %>
+	<h1 class="subtitle">Location</h1>
+	<%= image_tag "http://maps.google.com/maps/api/staticmap?center=#{neighbourhood},NY&size=250x250&sensor=false&zoom=13#{marker}" %>
+	<br>
+	<br>
+	<br>
+</div>	
+<br class="clearfix">
+
+<div class="offset-by-six four columns">
+	<h1 class="subtitle2">Reviews</h1>
+	<%= form_for @review, url: post_yogaclass_path do |f| %>
+		<%= f.text_area :post, :placeholder => "Add Review" %>
+		<%= f.submit("Submit")  %>
+	<% end %>
+	<% if @reviews != nil %>
+		<% @reviews.each do |review| %>
+			<div class="review"> 
+				<p id="textrev"><%= review.post %></p>
+			</div>
+		<% end %>
+	<% end %>	
+</div>

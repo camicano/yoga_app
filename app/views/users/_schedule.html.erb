@@ -178,7 +178,7 @@
 <h1 class="subtitle">Yoga classes available</h1>
 <ul>
 <% array_classes.each do |cla| %>
-	<li class="bodytext2"><a href="" ><strong><%= cla.title %></a>:</strong> <%= cla.day.capitalize %> at <%= cla.time %> hrs. (<%=  cla.cost %>)</li>
+	<li class="bodytext2"><a href="/studios/class/<%= cla.id %>/show" ><strong><%= cla.title %></a>:</strong> <%= cla.day.capitalize %> at <%= cla.time %> hrs. (<%=  cla.cost %>)</li>
 <% end %>
 </div>
 

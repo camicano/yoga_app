@@ -24,7 +24,7 @@
 	<h1 class="subtitle">Classes</h1>
 	<ul>
 		<% @studio.yogaclasses.each do |yogaclass| %>
-			<a href="/studios/profile/class/<%= yogaclass.id %>">
+			<a href="/studios/class/<%= yogaclass.id %>/show">
 				<li class="bodytext2"><strong><%= yogaclass.title %></strong>: <%= yogaclass.day %> at <%= yogaclass.time %>. ($<%=  yogaclass.cost %>)</li>
 			</a>
 		<% end %>

@@ -8,4 +8,8 @@ class WelcomeController < ApplicationController
 	def result
 		@addresses = Address.all
 	end
+
+	def test
+
+	end
 end
