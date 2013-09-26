@@ -1,19 +1,24 @@
-<h1>Profile</h1>
+<div class="offset-by-one six columns">
+	<h1 class="subtitle">Profile</h1>
 
-<h3>Personalized Search</h3>
-
-<p>Neighborhood: <%= @schedule.neighbourhood %></p>
-<br>
-<p>Monday: <%= @schedule.mon %></p>
-<p>Tuesday: <%= @schedule.tue %></p>
-<p>Wednesday: <%= @schedule.wed %></p>
-<p>Thursday: <%= @schedule.thu %></p>
-<p>Friday: <%= @schedule.fri %></p>
-<p>Saturday: <%= @schedule.sat %></p>
-<p>Sunday: <%= @schedule.sun %></p>
-
-<%= link_to "Create/Edit schedule", edit_schedule_path %> 
-
-<div>
-<%= render partial: "users/schedule", locals: { studios: @studios, user: @schedule } %>
+	<p class="bodytext2"><strong>Neighborhood:</strong> <%= @schedule.neighbourhood.capitalize %></p>
+	<p class="bodytext2"><strong>Monday:</strong> <%= @schedule.mon.capitalize  %></p>
+	<p class="bodytext2"><strong>Tuesday:</strong> <%= @schedule.tue.capitalize  %></p>
+	<p class="bodytext2"><strong>Wednesday:</strong> <%= @schedule.wed.capitalize  %></p>
+	<p class="bodytext2"><strong>Thursday:</strong> <%= @schedule.thu.capitalize  %></p>
+	<p class="bodytext2"><strong>Friday:</strong> <%= @schedule.fri.capitalize  %></p>
+	<p class="bodytext2"><strong>Saturday:</strong> <%= @schedule.sat.capitalize  %></p>
+	<p class="bodytext2"><strong>Sunday:</strong> <%= @schedule.sun.capitalize  %></p>
+	<br>
+	<%= link_to "Edit Schedule", edit_schedule_path, :class => "button" %> 
 </div>
+
+
+<div class="six columns">
+		<%= render partial: "users/schedule", locals: { studios: @studios, user: @schedule } %>
+</div>
+
+<br class="clearfix">
+<br>
+<br>
+

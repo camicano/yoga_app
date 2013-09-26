@@ -1,31 +1,29 @@
-<h1>Welcome to Yogapp! Please enter you studio's information</h1>
+<h2 class="subtitle2">Welcome! Please enter you studio's information</h2>
 
-<%= form_for @address, url: create_address_path do |f| %>
+<div class="offset-by-six">
+	<%= form_for @address, url: create_address_path do |f| %>
  
+	<div>
+	<%= f.text_field :name, :placeholder => "Name:" %>
+	</div>
 
-<div>
-	<%= f.label("Name: ") %>
-	<%= f.text_field :name %>
-</div>
+	<div>
+	<%= select_tag(:neighbourhood, options_for_select([["Neighbourhood"], ["crown heights"], ["union square"]])) %>
+	</div>
 
-<div>
-	<%= label_tag ("Neighborhood: ") %>
-	<%= select_tag(:neighbourhood, options_for_select([[], ["crown heights"], ["union square"]])) %>
-</div>
-<div>
-	<%= f.label("Address: ") %>
-	<%= f.text_field :address %>
-</div>
+	<div>
+	<%= f.text_field :address, :placeholder => "Name:"  %>
+	</div>
 
-<div>
-	<%= f.label("Description: ") %>
-</div>
-<div>
-	<%= f.text_area :description %>
-</div>
+	<div>
+		<%= f.label("Description: ") %>
+	</div>
+	<div>
+		<%= f.text_area :description %>
+	</div>
 
 
-<div> 
-	<%= f.submit("Submit") %>
-</div>
+	<div> 
+		<%= f.submit("Submit") %>
+	</div>
 <% end %>

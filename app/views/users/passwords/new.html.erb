@@ -1,12 +1,13 @@
-<h2>Forgot your password?</h2>
+<div class="offset-by-six">
+	<h2 class="subtitle">Forgot your password? <i id="leaf" class="icon-exclamation"></i></h2>
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <div><%= f.email_field :email, :autofocus => true, :placeholder => "email" %></div>
 
   <div><%= f.submit "Send me reset password instructions" %></div>
 <% end %>
 
 <%= render "users/shared/links" %>
+</div>

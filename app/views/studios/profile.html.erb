@@ -1,19 +1,34 @@
-<h1>Profile</h1>
+<div class="offset-by-three six columns">
+	<h1 class="subtitle">Profile</h1>
 
-<h3>Studio Details</h3>
+	<p class="bodytext2"><strong>Name:</strong> <%= @address.name %></p>
+	<p class="bodytext2"><strong>Neighborhood:</strong> <%= @address.neighbourhood %>
+	<p class="bodytext2"><strong>Address:</strong> <%= @address.address %> </p>
+	<p class="bodytext2"><strong>Description:</strong> <%= @address.description %></p>
+	<%= link_to "Edit info", edit_address_path, :class => "button" %> 
 
-<p>Name: <%= @address.name %></p>
-<p>Neighborhood: <%= @address.neighbourhood %>
-<p>Address: <%= @address.address %> </p>
-<p>Description: <%= @address.description %></p>
+	<div>
+	<% marker = "&markers=" + @studio.address.latitude.to_s + "%2C" + @studio.address.longitude.to_s %>
 
-<ul>
-	<% @studio.yogaclasses.each do |yogaclass| %>
-		<a href="/studios/profile/class/<%= yogaclass.id %>">
-			<li><%= yogaclass.title %>: <%= yogaclass.day %> at <%= yogaclass.time %>. ($<%=  yogaclass.cost %>)</li>
-		</a>
-	<% end %>
-</ul>
+	<% neighbourhood = @studio.address.neighbourhood.gsub(/[" "]/, "+") %>
+	<br>
+	<h1 class="subtitle">Location</h1>
+	<%= image_tag "http://maps.google.com/maps/api/staticmap?center=#{neighbourhood},NY&size=250x250&sensor=false&zoom=13#{marker}" %>
+	<br>
+	<br>
+	<br>
+</div>
+</div>
 
-<%= link_to "Add a class", new_yogaclass_path %>  |   
-<%= link_to "Create/Edit info", edit_address_path %> 
+<div class="six columns">
+	<h1 class="subtitle">Classes</h1>
+	<ul>
+		<% @studio.yogaclasses.each do |yogaclass| %>
+			<a href="/studios/profile/class/<%= yogaclass.id %>">
+				<li class="bodytext2"><strong><%= yogaclass.title %></strong>: <%= yogaclass.day %> at <%= yogaclass.time %>. ($<%=  yogaclass.cost %>)</li>
+			</a>
+		<% end %>
+	</ul>
+
+	<%= link_to "Add a class", new_yogaclass_path, :class => "button" %> 
+<div>

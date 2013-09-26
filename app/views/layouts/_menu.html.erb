@@ -1,15 +1,15 @@
-<%= link_to "home", index_path %>
+<%= link_to "home", index_path, :class => "button"  %>
 
 <% if user_signed_in? %>
-  | <%= link_to "profile", user_profile_path %>
-  | <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+  | <%= link_to "profile", user_profile_path, :class => "button" %>
+  | <%= link_to "sign out", destroy_user_session_path, method: :delete, :class => "button"  %>
 <% else %>
-  | <%= link_to "sign up", new_user_registration_path %>
-  | <%= link_to "sign in", new_user_session_path %>
+  | <%= link_to "sign up", new_user_registration_path, :class => "button"  %>
+  | <%= link_to "sign in", new_user_session_path, :class => "button"  %>
   <% if studio_signed_in? %>
-  | <%= link_to "profile", studio_profile_path %>
-  | <%= link_to "sign out", destroy_studio_session_path, method: :delete %>
+  | <%= link_to "profile", studio_profile_path, :class => "button"  %>
+  | <%= link_to "sign out", destroy_studio_session_path, method: :delete, :class => "button"  %>
   <% else %>
-  | are you a yoga <%= link_to "studio?", new_studio_session_path  %>
+  | <span class="button">are you a <%= link_to "yoga studio", new_studio_session_path, :class => "button"  %>?</span>
   <% end %>
 <% end %>

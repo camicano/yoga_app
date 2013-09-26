@@ -169,15 +169,16 @@
 	<% addresses << marker %>
 	<% end %>
 	<% neighbourhood = user.neighbourhood.gsub(/[" "]/, "+") %>
-	<h1>Map</h1>
-	<%= image_tag "http://maps.google.com/maps/api/staticmap?center=#{neighbourhood},NY&size=450x300&sensor=false&zoom=14#{addresses.join}" %> 
+	<h1 class="subtitle">Map</h1>
+	<%= image_tag "http://maps.google.com/maps/api/staticmap?center=#{neighbourhood},NY&size=450x300&sensor=false&zoom=14#{addresses.join}" %>
 </div>
 
+<br>
 <div>
-<h1>Yoga classes available</h1>
+<h1 class="subtitle">Yoga classes available</h1>
 <ul>
 <% array_classes.each do |cla| %>
-	<li><%= cla.title %>: <%= cla.day %> at <%= cla.time %>. ($<%=  cla.cost %>)</li>
+	<li class="bodytext2"><a href="" ><strong><%= cla.title %></a>:</strong> <%= cla.day.capitalize %> at <%= cla.time %> hrs. (<%=  cla.cost %>)</li>
 <% end %>
 </div>
 

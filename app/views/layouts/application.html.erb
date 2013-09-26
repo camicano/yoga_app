@@ -10,11 +10,20 @@
 	<div class="container">
 	<div>
 	<%= render 'layouts/menu' %>
-	<%if notice || alert %>
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-	<%end%>
 	</div>	
+	<div class="popup">
+	<%if notice || alert %>
+	<p class="notice button2"><%= notice %></p>
+	<p class="alert button2"><%= alert %></p>
+	<%end%>
+	</div>
+	<div class="sixteen columns">
+	<h1 id="h1">asan<span>a</span></h1>
+	<h3 id="slogan">find affortable and convenient yoga near you <i id="leaf" class="icon-leaf icon-large"></i></h3>
+	</div>
+	<br class="clear" >
+	<br>
+	<br>
 	
 	<%= yield %>
 	</div>

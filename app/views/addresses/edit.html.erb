@@ -1,30 +1,34 @@
-<h1>edit</h1>
+<div class="offset-by-six">
+	<h2 class="subtitle">Edit <i id="leaf" class="icon-wrench"></i></h2>
 
-<%= form_for @address, url: update_address_path do |f| %>
+	<%= form_for @address, url: update_address_path do |f| %>
  
 
-<div>
-	<%= f.label("Name: ") %>
-	<%= f.text_field :name %>
-</div>
-<div>
-	<%= f.label("Neighborhood: ") %>
-	<%= f.select(:neighbourhood, options_for_select([[], ["crown heights"], ["union square"]], @address.neighbourhood)) %>
-</div>
-<div>
-	<%= f.label("Address: ") %>
-	<%= f.text_field :address %>
-</div>
+	<div>
+		<%= f.label("Name: ") %>
+		<%= f.text_field :name %>
+	</div>
+	
+	<div>
+		<%= f.label("Neighborhood: ") %>
+		<%= f.select(:neighbourhood, options_for_select([[], ["crown heights"], ["union square"]], @address.neighbourhood)) %>
+	</div>
 
-<div>
-	<%= f.label("Description: ") %>
-</div>
-<div>
-	<%= f.text_area :description %>
-</div>
+	<div>
+		<%= f.label("Address: ") %>
+		<%= f.text_field :address %>
+	</div>
 
+	<div>
+		<%= f.label("Description: ") %>
+	</div>
+	
+	<div>
+		<%= f.text_area :description %>
+	</div>
 
-<div> 
-	<%= f.submit("Submit") %>
+	<div> 
+		<%= f.submit("Submit") %>
+	</div>
+	<% end %>
 </div>
-<% end %>
