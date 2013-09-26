@@ -1,8 +1,14 @@
-<h1>Yoga App</h1>
+<div class="sixteen columns">
+<h1 id="h1">Yoga App</h1>
 
-<h3>Choose a neighbourhood!</h3>
-<%= button_to "Crown Heights", brooklyn_path, method: :get %>
-<%= button_to "Union Square", index_path, method: :get %>
+<div>
+<h3 class="subtitle">Choose a neighborhood!</h3>
+<%= button_to "Crown Heights", brooklyn_path, method: :get, :class => "button" %>
+<%= button_to "Union Square", index_path, method: :get, :class => "button" %>
+</div>
+
+<div class="offset-by-four">
 <%= image_tag "http://maps.google.com/maps/api/staticmap?center=Union+Square,NY&size=450x300&sensor=false&zoom=14" %> 
-
+</div>
+</div>
 

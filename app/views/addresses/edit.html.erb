@@ -8,7 +8,7 @@
 	<%= f.text_field :name %>
 </div>
 <div>
-	<%= f.label("Neighbourhood: ") %>
+	<%= f.label("Neighborhood: ") %>
 	<%= f.select(:neighbourhood, options_for_select([[], ["crown heights"], ["union square"]], @address.neighbourhood)) %>
 </div>
 <div>

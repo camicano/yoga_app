@@ -3,7 +3,7 @@
 <%= form_for @schedule, url: update_schedule_path do |f| %>
  
 <div>
-	<%= label_tag ("Neighbourhood: ") %>
+	<%= label_tag ("Neighborhood: ") %>
 	<%= select_tag("schedule[neighbourhood]", options_for_select([[], ["crown heights"], ["union square"]], @schedule.neighbourhood)) %>
 </div>
 <div> 

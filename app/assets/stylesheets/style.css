@@ -1,0 +1,27 @@
+#h1 {
+	font-family: 'Georgia', serif;
+	text-align: center;
+	font-size: 70px;
+	padding-bottom: 20px;
+	padding-top: 40px;
+}
+
+.subtitle {
+	font-family: 'Georgia', serif;
+	font-size: 30px;
+	padding: 10px;
+}
+
+.button {
+	background-color: #CE65FF;
+	cursor: pointer;
+	border: none;
+	width: 100px;
+	height: 20px;
+}
+
+.button:hover {
+	background-color: #CE3EFF;
+	border: none;
+	
+}
