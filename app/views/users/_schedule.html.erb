@@ -168,8 +168,9 @@
 	<% marker = "&markers=" + address.latitude.to_s + "%2C" + address.longitude.to_s %>
 	<% addresses << marker %>
 	<% end %>
+	<% neighbourhood = user.neighbourhood.gsub(/[" "]/, "+") %>
 	<h1>Map</h1>
-	<%= image_tag "http://maps.google.com/maps/api/staticmap?center=Crown+Heights,NY&size=450x300&sensor=false&zoom=14#{addresses.join}" %> 
+	<%= image_tag "http://maps.google.com/maps/api/staticmap?center=#{neighbourhood},NY&size=450x300&sensor=false&zoom=14#{addresses.join}" %> 
 </div>
 
 <div>
