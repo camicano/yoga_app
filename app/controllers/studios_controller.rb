@@ -1,11 +1,8 @@
 class StudiosController < ApplicationController
+	
 	def profile
 		@studio = current_studio
-		if @studio.address.present?
-			@address = @studio.address
-		else
-			@address = Address.new
-		end
+		@address = @studio.address
 	end
 
 	def new_class
@@ -26,6 +23,7 @@ class StudiosController < ApplicationController
 
 	def update_class
 		@class = Yogaclass.update(params[:yogaclass_id], params[:yogaclass])
+		
 		redirect_to '/studios/profile'
 	end
 
@@ -47,10 +45,7 @@ class StudiosController < ApplicationController
 	def post
 		@review = Review.create(params[:review])
 		yogaclass = Yogaclass.find(params[:yogaclass_id])
-
 		yogaclass.reviews << @review
-
-		
 		
 		redirect_to show_yogaclass_path
 	end

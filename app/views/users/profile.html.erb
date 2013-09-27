@@ -1,6 +1,5 @@
 <div class="offset-by-one six columns">
 	<h1 class="subtitle">Profile</h1>
-
 	<p class="bodytext2"><strong>Neighborhood:</strong> <%= @schedule.neighbourhood.capitalize %></p>
 	<p class="bodytext2"><strong>Monday:</strong> <%= @schedule.mon.capitalize  %></p>
 	<p class="bodytext2"><strong>Tuesday:</strong> <%= @schedule.tue.capitalize  %></p>
@@ -10,14 +9,17 @@
 	<p class="bodytext2"><strong>Saturday:</strong> <%= @schedule.sat.capitalize  %></p>
 	<p class="bodytext2"><strong>Sunday:</strong> <%= @schedule.sun.capitalize  %></p>
 	<br>
+	
 	<%= link_to "Edit Schedule", edit_schedule_path, :class => "button" %> 
-</div>
 
+	<div>
+		<%= mail_to @user.email, "test", :subject => "test", :body => "this is a test" %> 
+	</div>	
+</div>
 
 <div class="nine columns">
-		<%= render partial: "users/schedule", locals: { studios: @studios, user: @schedule } %>
+	<%= render partial: "users/schedule", locals: { studios: @studios, user: @schedule, login: @user } %>
 </div>
-
 <br class="clearfix">
 <br>
 <br>

@@ -1,8 +1,10 @@
 class SchedulesController < ApplicationController
+	
 	def new
 		user = User.find(current_user)	
 		@schedule = Schedule.new
 	end	
+
 	def create
 		@schedule = Schedule.create(params[:schedule])
 		@user = User.find(current_user)
@@ -10,6 +12,7 @@ class SchedulesController < ApplicationController
 
 		redirect_to '/profile'
 	end	
+	
 	def edit
 		user = User.find(current_user)
 		@schedule = user.schedule

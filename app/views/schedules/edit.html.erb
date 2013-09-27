@@ -1,50 +1,49 @@
 <div class="offset-by-six">
 	<h2 class="subtitle">Edit <i id="leaf" class="icon-wrench"></i></h2>
-
 	<%= form_for @schedule, url: update_schedule_path do |f| %>
  
-	<div>
-		<%= label_tag ("Neighborhood: ") %>
-		<%= select_tag("schedule[neighbourhood]", options_for_select([[], ["crown heights"], ["union square"]], @schedule.neighbourhood)) %>
-	</div>
+		<div>
+			<%= label_tag ("Neighborhood: ") %>
+			<%= select_tag("schedule[neighbourhood]", options_for_select([[], ["crown heights"], ["union square"]], @schedule.neighbourhood)) %>
+		</div>
 
-	<div>
-		<%= label_tag(:monday) %>
-		<%= select_tag("schedule[mon]", options_for_select([[], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]], @schedule.mon)) %>
-	</div>
+		<div>
+			<%= label_tag(:monday) %>
+			<%= select_tag("schedule[mon]", options_for_select([[], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]], @schedule.mon)) %>
+		</div>
 
-	<div>
-		<%= label_tag(:tuesday) %>
-		<%= select_tag("schedule[tue]", options_for_select([[], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]], @schedule.tue)) %>
- 	</div>
+		<div>
+			<%= label_tag(:tuesday) %>
+			<%= select_tag("schedule[tue]", options_for_select([[], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]], @schedule.tue)) %>
+ 		</div>
  	
- 	<div>
-		<%= label_tag(:wednesday) %> 
-		<%= select_tag("schedule[wed]", options_for_select([[], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]], @schedule.wed)) %>
-	</div>
-	<div>  
-		<%= label_tag(:thursday) %>
-		<%= select_tag("schedule[thu]", options_for_select([[], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]], @schedule.thu)) %>
-	</div>
+ 		<div>
+			<%= label_tag(:wednesday) %> 
+			<%= select_tag("schedule[wed]", options_for_select([[], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]], @schedule.wed)) %>
+		</div>
+		<div>  
+			<%= label_tag(:thursday) %>
+			<%= select_tag("schedule[thu]", options_for_select([[], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]], @schedule.thu)) %>
+		</div>
 
-	<div> 
-		<%= label_tag(:friday) %>
-		<%= select_tag("schedule[fri]", options_for_select([[], ['All day', "all"], ['Morning', "m"], ['Afternoon', "a"], ['Night', "n"]], @schedule.fri)) %>
-	</div>
+		<div> 
+			<%= label_tag(:friday) %>
+			<%= select_tag("schedule[fri]", options_for_select([[], ['All day', "all"], ['Morning', "m"], ['Afternoon', "a"], ['Night', "n"]], @schedule.fri)) %>
+		</div>
 
-	<div> 
-		<%= label_tag(:saturday) %>
-		<%= select_tag("schedule[sat]", options_for_select([[], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]], @schedule.sat)) %>
-	</div>
+		<div> 
+			<%= label_tag(:saturday) %>
+			<%= select_tag("schedule[sat]", options_for_select([[], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]], @schedule.sat)) %>
+		</div>
 
-	<div> 
-		<%= label_tag(:sunday) %>
-		<%= select_tag("schedule[sun]", options_for_select([[], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]], @schedule.sun)) %>
-	</div>
+		<div> 
+			<%= label_tag(:sunday) %>
+			<%= select_tag("schedule[sun]", options_for_select([[], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]], @schedule.sun)) %>
+		</div>
 
-	<div> 
-		<%= submit_tag("Submit") %>
-	</div>
+		<div> 
+			<%= submit_tag("Submit") %>
+		</div>
 	<% end %>
 </div>
 

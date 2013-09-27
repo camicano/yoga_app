@@ -1,26 +1,27 @@
 <h2 class="subtitle2">Make Your Own Schedule:</h2>
-<div class="offset-by-six">
+	<div class="offset-by-six">
 	<%= form_for @schedule, url: create_schedule_path do |f| %> 
  
-	<div><%= select_tag("schedule[neighbourhood]", options_for_select([["Neighborhood: "], ["crown heights"], ["union square"]])) %></div>
+		<div><%= select_tag("schedule[neighbourhood]", options_for_select([["Neighborhood: "], ["crown heights"], ["union square"]])) %></div>
 
-	<div><%= select_tag("schedule[mon]", options_for_select([["Monday:"], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]])) %></div>
+		<div><%= select_tag("schedule[mon]", options_for_select([["Monday:"], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]])) %></div>
 
-	<div><%= select_tag("schedule[tue]", options_for_select([["Tuesday:"], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]])) %></div>
+		<div><%= select_tag("schedule[tue]", options_for_select([["Tuesday:"], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]])) %></div>
 
- 	<div><%= select_tag("schedule[wed]", options_for_select([["Wednesday:"], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]])) %></div>
+ 		<div><%= select_tag("schedule[wed]", options_for_select([["Wednesday:"], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]])) %></div>
  	
- 	<div><%= select_tag("schedule[thu]", options_for_select([["Thursday"], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]])) %></div>
+ 		<div><%= select_tag("schedule[thu]", options_for_select([["Thursday"], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]])) %></div>
 	
-	<div><%= select_tag("schedule[fri]", options_for_select([["Friday:"], ['All day', "all"], ['Morning', "m"], ['Afternoon', "a"], ['Night', "n"]])) %></div>
+		<div><%= select_tag("schedule[fri]", options_for_select([["Friday:"], ['All day', "all"], ['Morning', "m"], ['Afternoon', "a"], ['Night', "n"]])) %></div>
 	
-	<div><%= select_tag("schedule[sat]", options_for_select([["Saturday:"], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]])) %></div>
+		<div><%= select_tag("schedule[sat]", options_for_select([["Saturday:"], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]])) %></div>
 	
-	<div><%= select_tag("schedule[sun]", options_for_select([["Sunday:"], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]])) %></div>
-	<br>
-	<div class="bottom"> 
-		<%= submit_tag("Submit") %>
-	</div>
+		<div><%= select_tag("schedule[sun]", options_for_select([["Sunday:"], ['All day', "all"], ['Morning', "morning"], ['Afternoon', "afternoon"], ['Night', "night"]])) %></div>
+		<br>
+	
+		<div class="bottom"> 
+			<%= submit_tag("Submit") %>
+		</div>
 	<% end %>
 </div>
 

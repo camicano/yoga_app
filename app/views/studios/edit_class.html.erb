@@ -1,26 +1,31 @@
-<h1>Edit Class</h1>
+<h2 class="subtitle2">Edit Class</h2>
+	
+<div class="offset-by-six">
+	<%= form_for @class, url: update_yogaclass_path do |f| %>
+		<div>
+			<%= f.label(:title) %>
+			<%= f.text_field(:title) %>
+		</div>
 
-<%= form_for @class, url: update_yogaclass_path do |f| %>
-<div>
-<%= f.label(:title) %>
-<%= f.text_field(:title) %>
-</div>
-<div>
-<%= f.label(:time) %>
-<%= f.text_field(:time) %>
-</div>
-<div>
-<%= f.label(:day) %>
-<%= f.select(:day, options_for_select([[], ['monday'], ['tuesday'], ['wednesday'], ['thursday'], ['friday'], ['saturday'], ['sunday']], @class.day)) %>
-</div>
-<div>
-<%= f.label(:cost, "Cost: $") %>
-<%= f.text_field(:cost) %>
-</div>
+		<div>
+			<%= f.label(:time) %>
+			<%= f.text_field(:time) %>
+		</div>
 
-<%= f.submit("Add class") %>
-<% end %>
+		<div>
+			<%= f.label(:day) %>
+			<%= f.select(:day, options_for_select([[], ['monday'], ['tuesday'], ['wednesday'], ['thursday'], ['friday'], ['saturday'], ['sunday']], @class.day)) %>
+		</div>
 
-<%= form_for delete_yogaclass_path, method:"delete" do |f| %>
-<%= f.submit("delete") %>
-<% end %>
+		<div>
+			<%= f.label(:cost, "Cost: $") %>
+			<%= f.text_field(:cost) %>
+		</div>
+		<%= f.submit("Edit") %>
+	<% end %>
+
+	<%= form_for delete_yogaclass_path, method:"delete" do |f| %>
+		<%= f.submit("delete") %>
+	<% end %> 
+
+</div>

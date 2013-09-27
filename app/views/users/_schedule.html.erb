@@ -156,30 +156,33 @@
 			<% end %>	
 		<% end %>
 	<% end %>
-
-<!-- selected classes -->
-
 <% end %>
 
+<!-- HTML for the layout -->
 <div>
 	<% addresses = [] %>
 	<% array_classes.each do |add| %>
-	<% address = add.studio.address %>
-	<% marker = "&markers=" + address.latitude.to_s + "%2C" + address.longitude.to_s %>
-	<% addresses << marker %>
+		<% address = add.studio.address %>
+		<% marker = "&markers=" + "label:" + address.id.to_s + "%7C" + address.latitude.to_s + "%2C" + address.longitude.to_s %>
+		<% addresses << marker %>
 	<% end %>
 	<% neighbourhood = user.neighbourhood.gsub(/[" "]/, "+") %>
 	<h1 class="subtitle">Map</h1>
 	<%= image_tag "http://maps.google.com/maps/api/staticmap?center=#{neighbourhood},NY&size=450x300&sensor=false&zoom=14#{addresses.join}" %>
 </div>
-
 <br>
+
 <div>
 <h1 class="subtitle">Yoga classes available</h1>
 <ul>
-<% array_classes.each do |cla| %>
-	<li class="bodytext2"><a href="/studios/class/<%= cla.id %>/show" ><strong><%= cla.title %></a>:</strong> <%= cla.day.capitalize %> at <%= cla.time %> hrs. (<%=  cla.cost %>)</li>
-<% end %>
+	<% array_classes.each do |cla| %>
+		<% if cla.created_at >= login.last_sign_in_at %>
+			<% @h = "highlight" %>
+		<% else %>
+			<% @h = "" %>
+		<% end %>
+		<li class="bodytext2" id="<%= @h %>"><span id="marker"><%= cla.studio.address.id %></span>  <a href="/studios/class/<%= cla.id %>/show" ><strong class="strong"><%= cla.title %></a>:</strong> <%= cla.day.capitalize %> at <%= cla.time %> hrs.</li>
+	<% end %>
 </div>
 
 

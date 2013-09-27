@@ -14,11 +14,11 @@
 	<% marker = "&markers=" + @studio.latitude.to_s + "%2C" + @studio.longitude.to_s %>
 
 	<% neighbourhood = @studio.neighbourhood.gsub(/[" "]/, "+") %>
-	<h1 class="subtitle">Location</h1>
-	<%= image_tag "http://maps.google.com/maps/api/staticmap?center=#{neighbourhood},NY&size=250x250&sensor=false&zoom=13#{marker}" %>
-	<br>
-	<br>
-	<br>
+		<h1 class="subtitle">Location</h1>
+		<%= image_tag "http://maps.google.com/maps/api/staticmap?center=#{neighbourhood},NY&size=250x250&sensor=false&zoom=13#{marker}" %>
+		<br>
+		<br>
+		<br>
 </div>	
 <br class="clearfix">
 

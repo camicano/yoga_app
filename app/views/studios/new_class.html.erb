@@ -1,22 +1,23 @@
-<h1>New Class</h1>
+<div class="offset-by-six">
+	<h2 class="subtitle">New Class</h2>
 
-<%= form_for @class, url: create_yogaclass_path do |f| %>
-<div>
-<%= f.label(:title) %>
-<%= f.text_field(:title) %>
-</div>
-<div>
-<%= f.label(:time) %>
-<%= f.text_field(:time) %>
-</div>
-<div>
-<%= f.label(:day) %>
-<%= f.select(:day, options_for_select([[], ['monday'], ['tuesday'], ['wednesday'], ['thursday'], ['friday'], ['saturday'], ['sunday']])) %>
-</div>
-<div>
-<%= f.label(:cost, "Cost: $") %>
-<%= f.text_field(:cost) %>
-</div>
+	<%= form_for @class, url: create_yogaclass_path do |f| %>
+		<div>
+			<%= f.text_field :title, :placeholder => "Title" %>
+		</div>
 
-<%= f.submit("Add class") %>
-<% end %>
+		<div>
+			<%= f.text_field :time, :placeholder => "Time" %>
+		</div>
+
+		<div>
+			<%= f.select(:day, options_for_select([[], ['monday'], ['tuesday'], ['wednesday'], ['thursday'], ['friday'], ['saturday'], ['sunday']])) %>
+		</div>
+
+		<div>
+			<%= f.text_field(:cost, :placeholder => "Cost") %>
+		</div>
+
+		<%= f.submit("Add class") %>
+	<% end %>
+</div>

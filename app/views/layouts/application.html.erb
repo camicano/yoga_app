@@ -8,24 +8,30 @@
 </head>
 <body id="body">
 	<div class="container">
-	<div>
-	<%= render 'layouts/menu' %>
-	</div>	
-	<div class="popup">
-	<%if notice || alert %>
-	<p class="notice button2"><%= notice %></p>
-	<p class="alert button2"><%= alert %></p>
-	<%end%>
-	</div>
-	<div class="sixteen columns">
-	<h1 id="h1">asan<span>a</span></h1>
-	<h3 id="slogan">find affortable and convenient yoga near you <i id="leaf" class="icon-leaf icon-large"></i></h3>
-	</div>
-	<br class="clear" >
-	<br>
-	<br>
+		<!-- Top menu -->
+		<div>
+			<%= render 'layouts/menu' %>
+		</div>	
+		
+		<!-- Flash notes -->
+		<div class="popup">
+			<%if notice || alert %>
+			<p class="notice button2"><%= notice %></p>
+			<p class="alert button2"><%= alert %></p>
+			<%end%>
+		</div>
 	
-	<%= yield %>
+		<!-- Logo -->
+		<div class="sixteen columns">
+			<h1 id="h1">asan<span>a</span></h1>
+			<h3 id="slogan">find affortable and convenient yoga near you <i id="leaf" class="icon-leaf icon-large"></i></h3>
+		</div>
+	
+		<br class="clear" >
+		<br>
+		<br>
+	
+		<%= yield %>
 	</div>
 </body>
 </html>
