@@ -6,6 +6,8 @@ _find affordable yoga classes near you based on your time availability_.
 
 The site is designed for users as well as for studios. The idea behind it is to have yoga studios create their own accounts and post their classes on the site, when a user's search fit the criteria then the class gets added to the user's schedule.
 
+[to visit this page click here](http://yogapp.herokuapp.com)
+
 ####Technical specs
 **Asana** is developed in Rails 3 using postgresql databases. It uses the following gems:
 - Geocoder: A really easy to use gem that converts location information into coordinates. [More info](https://github.com/alexreisner/geocoder)
