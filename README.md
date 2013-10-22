@@ -8,6 +8,6 @@ The site is designed for users as well as for studios. The idea behind it is to 
 
 ####Technical specs
 **Asana** is developed in Rails 3 using postgresql databases. It uses the following gems:
-- Geocoder: A really easy to use gem that converts location information into coordinates. (More info)[/https://github.com/alexreisner/geocoder/]
-- Devise: A gem that allow you to have login features and a lot of other featured needed to have secure access to the page. (More info)[/https://github.com/plataformatec/devise/]
-- Font-Awesome: The gem that allows you to use that great library of icons created by bluestrap. (More info)[/https://github.com/bokmann/font-awesome-rails/]
+- Geocoder: A really easy to use gem that converts location information into coordinates. [More info](https://github.com/alexreisner/geocoder)
+- Devise: A gem that allow you to have login features and a lot of other featured needed to have secure access to the page. [More info](https://github.com/plataformatec/devise)
+- Font-Awesome: The gem that allows you to use that great library of icons created by bluestrap. [More info](https://github.com/bokmann/font-awesome-rails)
