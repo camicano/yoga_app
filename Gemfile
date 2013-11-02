@@ -21,11 +21,6 @@ group :assets do
 	gem "font-awesome-rails", "~> 3.2.1.3"
 end
 
-# #extra stuff
-# group :development, :test do
-#   gem 'rspec-rails', '~> 2.0'
-# end
-
 
 gem 'jquery-rails'
 
